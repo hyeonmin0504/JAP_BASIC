@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Cateory {
+public class Cateory  extends BaseEntity{
 
     @Id
     @GeneratedValue
@@ -13,7 +13,7 @@ public class Cateory {
 
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PARENT_ID")
     private Cateory parent;
 
